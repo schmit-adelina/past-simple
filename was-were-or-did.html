@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Was, Were or Did? — Past Simple practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#efe6df;--linen:#f6efe9;--pink:#e5c5d2;--pink2:#d9a9bd;--sage:#a5a67d;--sage2:#8c8e63;--ink:#2b2f22;--wine:#5a2a2e;--ok:#5f7a4a;--bad:#b34a55}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .3 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 70px}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.02em;line-height:1.05}
+.script{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600}
+.tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.hero{text-align:center;padding:60px 10px 40px;position:relative}
+.hero .tag{color:var(--wine)}
+.hero h1{font-size:clamp(46px,10vw,92px);margin:14px 0 6px;font-weight:500}
+.hero h1 .script{font-size:1.1em;color:var(--pink2);display:block;margin-top:-.1em}
+.hero p{max-width:480px;margin:10px auto 0;font-size:17px}
+.sticker{display:inline-block;background:var(--linen);border:1px solid var(--ink);padding:6px 14px;font-weight:700;font-size:13px;text-transform:uppercase;transform:rotate(-5deg);margin-top:22px;box-shadow:3px 3px 0 var(--ink)}
+.card{position:relative;margin:34px 0;padding:36px 30px 40px;background:var(--pink);border-radius:4px}
+.card.dark{background:var(--ink);color:var(--linen)}
+.card.green{background:var(--sage)}
+.card.torn{clip-path:polygon(0 3%,6% 0,14% 2%,24% 0,35% 2%,47% 0,58% 2%,70% 0,82% 2%,92% 0,100% 2%,100% 97%,92% 100%,80% 98%,67% 100%,55% 98%,42% 100%,30% 98%,17% 100%,6% 98%,0 100%);padding-top:44px;padding-bottom:48px}
+.num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--wine)}
+.dark .num{color:var(--pink2)}
+.card h2{font-size:clamp(28px,5vw,40px);margin:2px 0 6px}
+.card .inst{font-size:15px;margin-bottom:22px;opacity:.9}
+.steps{display:grid;gap:12px;margin-top:20px}
+.step{background:var(--linen);color:var(--ink);padding:16px 18px;border-radius:3px}
+.step b{font-family:'Playfair Display',serif;font-size:19px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:620px){.cols{grid-template-columns:1fr}.card{padding:30px 18px 36px}}
+.col{background:var(--linen);color:var(--ink);padding:18px;border-radius:3px}
+.col h3{font-size:24px;margin-bottom:8px}
+.col li{margin:5px 0 5px 18px;font-size:15px}
+.ru{font-size:13px;opacity:.75;font-style:italic}
+.never{margin-top:16px;padding:12px 16px;border:1.5px dashed var(--pink2);font-size:15px}
+.never s{color:var(--bad)} .never em{color:#cfe0b3;font-style:normal;font-weight:600}
+.item{background:var(--linen);color:var(--ink);padding:14px 16px;margin:10px 0;border-radius:3px;border-left:5px solid transparent;transition:.2s}
+.item.ok{border-color:var(--ok)}.item.no{border-color:var(--bad)}
+.q{font-size:17px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.q .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--wine);margin-right:4px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+button{font:inherit;cursor:pointer}
+.chip{padding:7px 16px;border:1.5px solid var(--ink);background:transparent;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink);transition:.15s}
+.chip:hover:not(:disabled){background:var(--ink);color:var(--linen)}
+.chip.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.chip.wrong{background:var(--bad);border-color:var(--bad);color:#fff}
+.chip:disabled{cursor:default}
+.gap{font:inherit;width:96px;border:none;border-bottom:2px solid var(--ink);background:rgba(165,166,125,.25);padding:2px 6px;text-align:center;color:var(--ink);border-radius:2px}
+.gap.w{width:130px}.gap.long{width:100%;text-align:left;margin-top:8px;padding:8px 10px}
+.gap:focus{outline:none;background:rgba(229,197,210,.6)}
+.gap.right{border-color:var(--ok);background:#dfe9d2}.gap.wrong{border-color:var(--bad);background:#f2d5d8}
+select{font:inherit;padding:6px 8px;border:1.5px solid var(--ink);background:var(--linen);border-radius:3px;max-width:100%}
+.fb{font-size:14px;margin-top:8px;display:none}.fb.show{display:block}
+.fb.g{color:var(--ok)}.fb.b{color:var(--bad)}
+.bar{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.btn{background:var(--ink);color:var(--linen);border:none;padding:10px 24px;border-radius:999px;font-weight:600;font-size:14px}
+.btn.alt{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn:hover{transform:translateY(-1px)}
+.score{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;margin-left:auto}
+.build{min-height:48px;border-bottom:2px dashed var(--sage2);padding:6px 0;display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tok{padding:6px 12px;background:var(--pink);border-radius:4px;border:none;color:var(--ink);font-size:15px;font-weight:500}
+.tok.used{opacity:.25;pointer-events:none}.tok.placed{background:var(--sage);}
+.hint{font-size:13px;opacity:.7;margin-top:2px}
+.total{text-align:center;margin-top:30px}
+.total h2{font-size:clamp(34px,7vw,56px)}
+.total .script{font-size:32px;color:var(--pink2)}
+footer{text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:30px}
+nav{position:sticky;top:0;z-index:5;background:rgba(239,230,223,.92);backdrop-filter:blur(6px);display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px;border-bottom:1px solid rgba(43,47,34,.15)}
+nav a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;border:1px solid transparent}
+nav a:hover{border-color:var(--ink)}
+nav a.done{background:var(--sage);}
+.dark .btn:not(.alt){background:var(--pink);color:var(--ink)}.dark .btn.alt{color:var(--linen)}.card.green .btn:not(.alt){background:var(--ink)}</style></head><body>
+<nav id="nav"><a href="#rule">Rule</a><a href="#e1">1</a><a href="#e2">2</a><a href="#e3">3</a><a href="#e4">4</a><a href="#e5">5</a><a href="#e6">6</a></nav>
+<div class="wrap">
+<header class="hero">
+<div class="tag">Past Simple · A2–B1</div>
+<h1>Was, were<span class="script">or did?</span></h1>
+<p>Sometimes the story needs «to be». Sometimes it needs an action verb with «did». Let’s learn to tell them apart.</p>
+<div class="sticker">Practice · 6 exercises</div>
+</header>
+
+<section class="card dark torn" id="rule">
+<div class="num">the rule</div>
+<h2>One quick question to ask yourself</h2>
+<p class="ru">Задай себе один вопрос — и выбор станет очевидным.</p>
+<div class="steps">
+<div class="step"><b>1. Is there an action in the sentence?</b><br>play, watch, go, buy, study, eat, have, like… (a verb you can “do”)</div>
+<div class="step"><b>2. Yes → use <i>did</i> + the base verb.</b><br>Did you <u>watch</u> it? · What did she <u>buy</u>?</div>
+<div class="step"><b>3. No (state, place, feeling, age, description) → use <i>was / were</i>.</b><br>Were you tired? · Where was he?</div>
+</div>
+<div class="cols">
+<div class="col"><h3>was / were</h3><p class="ru">«быть»: где? какой? кто? сколько лет?</p>
+<ul><li><b>Was</b> she at school?</li><li>Where <b>were</b> you born?</li><li>It <b>wasn’t</b> cold.</li><li>Yes, I <b>was</b>. / No, they <b>weren’t</b>.</li></ul></div>
+<div class="col"><h3>did + verb</h3><p class="ru">действие: делал, смотрел, купил…</p>
+<ul><li><b>Did</b> she <u>study</u>?</li><li>What <b>did</b> you <u>eat</u>?</li><li>I <b>didn’t</b> <u>like</u> it.</li><li>Yes, I <b>did</b>. / No, they <b>didn’t</b>.</li></ul></div>
+</div>
+<div class="never"><b>Never mix them!</b> &nbsp; <s>Did you were late?</s> → <em>Were you late?</em> &nbsp;·&nbsp; <s>Did he went?</s> → <em>Did he go?</em><br>
+<span class="ru">В вопросе с did глагол всегда в начальной форме. «Was/were» уже сам «помощник» — did рядом не нужен.</span></div>
+</section>
+
+<div id="app"></div>
+<div class="total card green" id="total"><div class="total"><div class="script">your result</div><h2><span id="tot">0</span> / <span id="max">0</span></h2><p id="msg">Complete the exercises to see your score.</p></div></div>
+<footer>Past Simple · be or do</footer>
+</div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const norm=s=>s.toLowerCase().replace(/[’`]/g,"'").replace(/[.?!]+$/,'').replace(/\s+/g,' ').trim();
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const state={};
+function updTotal(){let t=0,m=0;for(const k in state){t+=state[k].s;m+=state[k].m}$('#tot').textContent=t;$('#max').textContent=m;
+ const p=m?t/m:0;$('#msg').textContent=p==1?'Perfect! You always know when to use be and when to use did. ✨':p>.8?'Great work! Just a couple of details to polish.':p>.5?'Good progress — re-read the rule and try the exercises again.':'Keep going — ask yourself: is there an action verb?'}
+function section(id,num,title,inst,cls){
+ const s=document.createElement('section');s.className='card torn '+cls;s.id=id;
+ s.innerHTML=`<div class="num">exercise ${num}</div><h2>${title}</h2><div class="inst">${inst}</div><div class="list"></div><div class="bar"><button class="btn">Check</button><button class="btn alt">Try again</button><div class="score"></div></div>`;
+ $('#app').appendChild(s);return s}
+function finish(sec,id,s,m){state[id]={s,m};$('.score',sec).textContent=`${s} / ${m}`;const a=document.querySelector(`nav a[href="#${id}"]`);if(s==m)a.classList.add('done');else a.classList.remove('done');updTotal()}
+function fb(el,ok,text){const f=$('.fb',el);el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');f.className='fb show '+(ok?'g':'b');f.textContent=text}
+
+/* 1 choose */
+const E1=[["___ you at home last night?",["Were","Did"],"Were","No action verb — a state/place → Were."],
+["___ you watch the film yesterday?",["Were","Did"],"Did","“watch” is an action → Did + base verb."],
+["Where ___ she born?",["was","did"],"was","“be born” is a fixed phrase with be → was."],
+["What time ___ the lesson start?",["was","did"],"did","“start” is an action → did."],
+["___ they happy with the hotel?",["Were","Did"],"Were","“happy” is a feeling → Were."],
+["Why ___ he late this morning?",["was","did"],"was","“late” describes a state → was."],
+["How ___ you get to work?",["were","did"],"did","“get” is an action → did."],
+["___ it cold on Sunday?",["Was","Did"],"Was","Weather = description → Was."],
+["Who ___ your teacher last year?",["was","did"],"was","“Who was…?” = who is/was somebody → was."],
+["___ Anna and Tom go to the party?",["Were","Did"],"Did","“go” is an action → Did."]];
+(()=>{const s=section('e1',1,'Be or do?','Choose the correct word to start or complete the question.','');const L=$('.list',s);
+let done=0,sc=0;E1.forEach((r,i)=>{const d=document.createElement('div');d.className='item';
+d.innerHTML=`<div class="q"><span class="n">${i+1}</span>${r[0].replace('___','<b>_____</b>')}</div><div class="opts">${r[1].map(o=>`<button class="chip">${o}</button>`).join('')}</div><div class="fb"></div>`;
+d.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{if(d.dataset.a)return;d.dataset.a=1;const ok=b.textContent==r[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)d.querySelectorAll('.chip').forEach(x=>{if(x.textContent==r[2])x.classList.add('right')});
+ d.querySelectorAll('.chip').forEach(x=>x.disabled=true);if(ok)sc++;done++;fb(d,ok,(ok?'✓ ':'✗ ')+r[3]);finish(s,'e1',sc,E1.length)});L.appendChild(d)});
+$('.btn',s).style.display='none';$('.btn.alt',s).onclick=()=>{L.innerHTML='';s.remove();state.e1&&delete state.e1;location.reload()}})();
+
+/* generic typed */
+function typed(id,num,title,inst,items,mode){const s=section(id,num,title,inst,mode);const L=$('.list',s);
+items.forEach((r,i)=>{const d=document.createElement('div');d.className='item';d.innerHTML=r.html(i);L.appendChild(d)});
+$('.btn',s).onclick=()=>{let sc=0,tot=0;items.forEach((r,i)=>{const d=L.children[i];let all=true;const ins=[...d.querySelectorAll('input')];
+ ins.forEach((inp,k)=>{tot++;const ok=r.ans[k].some(a=>norm(a)==norm(inp.value));inp.classList.remove('right','wrong');inp.classList.add(ok?'right':'wrong');if(ok)sc++;else all=false});
+ fb(d,all,all?'✓ Correct!':'✗ '+r.exp)});finish(s,id,sc,tot)};
+$('.btn.alt',s).onclick=()=>{L.querySelectorAll('input').forEach(x=>{x.value='';x.classList.remove('right','wrong')});L.querySelectorAll('.item').forEach(d=>{d.classList.remove('ok','no');$('.fb',d).className='fb'});$('.score',s).textContent='';delete state[id];updTotal()}}
+const g=(w='')=>`<input class="gap ${w}" autocomplete="off" autocapitalize="off" spellcheck="false">`;
+/* 2 gaps */
+const E2=[["Where __ you yesterday?","— I __ at the gym.",[["were"],["was"]],"Where were you…? / I was at the gym (place = be)."],
+["__ you enjoy the concert?","— Yes, I __.",[["did"],["did"]],"“enjoy” is an action → Did you enjoy…? / Yes, I did."],
+["How __ the weather in Rome?","— It __ sunny and warm.",[["was"],["was"]],"Weather = description → was / was."],
+["What __ you do on Saturday?","— I __ (visit) my grandma.",[["did"],["visited"]],"What did you do…? / I visited (action, past form)."],
+["__ your parents at home?","— No, they __.",[["were"],["weren't","were not"]],"Were your parents…? / No, they weren't."],
+["__ he call you?","— No, he __.",[["did"],["didn't","did not"]],"“call” is an action → Did he call…? / No, he didn't."]];
+typed('e2',2,'Fill the gaps','Write <b>was, were, did</b> or a short answer. Watch the verbs in brackets!',E2.map(r=>({ans:r[2],exp:r[3],html:i=>`<div class="q"><span class="n">${i+1}</span>${r[0].replace('__',g())}</div><div class="q" style="margin-left:24px;margin-top:6px">${r[1].replace('__',g('w'))}</div><div class="fb"></div>`})),'dark');
+
+/* 3 builder */
+const E3=[["Where","were","you","born"],["Did","she","buy","a","new","phone"],["Why","was","he","so","angry"],["What","did","they","eat","for","dinner"],["Were","your","friends","at","the","party"],["How","did","you","learn","English"]];
+(()=>{const s=section('e3',3,'Build the question','Tap the words in the right order. Which helper do you need — be or did?','green');const L=$('.list',s);let sc=0;const st=[];
+E3.forEach((w,i)=>{const d=document.createElement('div');d.className='item';st[i]={sel:[],done:false};
+d.innerHTML=`<div class="q"><span class="n">${i+1}</span><span class="hint">Make a question (past):</span></div><div class="build"></div><div class="opts"></div><div class="fb"></div>`;
+const B=$('.build',d),O=$('.opts',d);
+shuffle(w).forEach(t=>{const b=document.createElement('button');b.className='tok';b.textContent=t;b.onclick=()=>{if(st[i].done)return;b.classList.add('used');const p=document.createElement('button');p.className='tok placed';p.textContent=t;
+ p.onclick=()=>{if(st[i].done)return;p.remove();b.classList.remove('used');st[i].sel=st[i].sel.filter(x=>x!==p)};st[i].sel.push(p);B.appendChild(p)};O.appendChild(b)});
+L.appendChild(d)});
+$('.btn',s).onclick=()=>{sc=0;E3.forEach((w,i)=>{const d=L.children[i];const got=[...$('.build',d).children].map(x=>x.textContent).join(' ');const ok=got==w.join(' ');if(ok)sc++;fb(d,ok,ok?'✓ '+got+'?':'✗ Correct: '+w.join(' ')+'?')});finish(s,'e3',sc,E3.length)};
+$('.btn.alt',s).onclick=()=>location.reload()})();
+
+/* 4 detective */
+const E4=[["Did you were at school yesterday?","Were you at school yesterday?","Never use did with was/were."],
+["Where did she born?","Where was she born?","“be born” uses be: was born."],
+["Was they happy?","Were they happy?","They → were."],
+["Did he went to the cinema?","Did he go to the cinema?","After did we use the base verb: go."],
+["She didn't was at home.","She wasn't at home.","Negative of was = wasn't."],
+["We weren't watch TV.","We didn't watch TV.","“watch” is an action → didn't watch."]];
+(()=>{const s=section('e4',4,'Mistake detective','Each sentence has a mistake. Pick the correct version.','dark');const L=$('.list',s);let sc=0;
+E4.forEach((r,i)=>{const d=document.createElement('div');d.className='item';const o=shuffle([r[0],r[1]]);
+d.innerHTML=`<div class="q"><span class="n">${i+1}</span>Which one is correct?</div><div class="opts" style="flex-direction:column;align-items:flex-start">${o.map(x=>`<button class="chip">${x}</button>`).join('')}</div><div class="fb"></div>`;
+d.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{if(d.dataset.a)return;d.dataset.a=1;const ok=b.textContent==r[1];b.classList.add(ok?'right':'wrong');d.querySelectorAll('.chip').forEach(x=>{if(x.textContent==r[1])x.classList.add('right');x.disabled=true});if(ok)sc++;fb(d,ok,(ok?'✓ ':'✗ ')+r[2]);finish(s,'e4',sc,E4.length)});L.appendChild(d)});
+$('.btn',s).style.display='none';$('.btn.alt',s).onclick=()=>location.reload()})();
+
+/* 5 match */
+const E5=[["Were you at the cinema?","No, I wasn't."],["Did you like the film?","Yes, I did."],["Was the film long?","Yes, it was."],["Did your friends come?","No, they didn't."],["Were your friends there?","Yes, they were."],["Did Anna pay for the tickets?","Yes, she did."]];
+(()=>{const s=section('e5',5,'Short answers','Match each question with the correct short answer.','');const L=$('.list',s);const ans=shuffle(E5.map(r=>r[1]));
+E5.forEach((r,i)=>{const d=document.createElement('div');d.className='item';
+d.innerHTML=`<div class="q"><span class="n">${i+1}</span>${r[0]}</div><div class="opts"><select><option value="">— choose —</option>${ans.map(a=>`<option>${a}</option>`).join('')}</select></div><div class="fb"></div>`;L.appendChild(d)});
+$('.btn',s).onclick=()=>{let sc=0;E5.forEach((r,i)=>{const d=L.children[i];const v=$('select',d).value;const ok=v==r[1];if(ok)sc++;fb(d,ok,ok?'✓ Correct!':'✗ '+(v?'Not quite. ':'Choose an answer. ')+'Hint: the answer repeats was/were or did from the question.')});finish(s,'e5',sc,E5.length)};
+$('.btn.alt',s).onclick=()=>{L.querySelectorAll('select').forEach(x=>x.value='');L.querySelectorAll('.item').forEach(d=>{d.classList.remove('ok','no');$('.fb',d).className='fb'});$('.score',s).textContent='';delete state.e5;updTotal()}})();
+
+/* 6 transform */
+const E6=[["She was in London last week.","Make a yes/no question.",["Was she in London last week"],"Was she in London last week?"],
+["They played football on Sunday.","Make a yes/no question.",["Did they play football on Sunday"],"Did they play football on Sunday?"],
+["He was born in Spain.","Ask about the place (Where…?)",["Where was he born"],"Where was he born?"],
+["You watched a film.","Ask about the thing (What…?)",["What did you watch"],"What did you watch?"],
+["The test was difficult.","Make it negative.",["The test wasn't difficult","The test was not difficult"],"The test wasn't difficult."],
+["I liked the book.","Make it negative.",["I didn't like the book","I did not like the book"],"I didn't like the book."]];
+typed('e6',6,'Transform it','Rewrite the sentence as asked. Use the correct helper: was / were or did.',E6.map(r=>({ans:[r[2]],exp:'Possible answer: '+r[3],html:i=>`<div class="q"><span class="n">${i+1}</span><b>${r[0]}</b></div><div class="hint" style="margin-left:24px">${r[1]}</div>${g('long')}<div class="fb"></div>`})),'dark');
+$('#max').textContent=0;
+</script></body></html>
